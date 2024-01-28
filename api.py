@@ -9,9 +9,10 @@ api = Api(app)
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
-#cv2.imshow('image', img)
-#cv2.waitKey(0)
-#cv2.destroyAllWindows()
+# cv2.imshow('image', img)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
+
 class PeopleCounter(Resource):
     def get(self):
         img = cv2.imread('images/dworzec.jpeg')
