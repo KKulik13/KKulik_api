@@ -13,6 +13,7 @@ api = Api(app)
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
+
 class PeopleCounter(Resource):
     def get(self):
         img = cv2.imread('images/dworzec.jpeg')
@@ -42,4 +43,3 @@ api.add_resource(PeopleCounter, '/')
 
 if __name__ == '__main__':
     app.run(debug=True)
-
