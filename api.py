@@ -10,7 +10,13 @@ class HelloWorld(Resource):
         return {'hello': 'world'}
 
 
+class HelloWorld2(Resource):
+    def get(self):
+        return {'hello': 'world'}
+
+
 api.add_resource(HelloWorld, '/test')
+api.add_resource(HelloWorld2, '/test2')
 
 if __name__ == '__main__':
     app.run(debug=True)
