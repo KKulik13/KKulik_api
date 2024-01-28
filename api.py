@@ -13,6 +13,7 @@ hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 
+
 class PeopleCounter(Resource):
     def get(self):
         img = cv2.imread('images/dworzec.jpeg')
@@ -22,6 +23,7 @@ class PeopleCounter(Resource):
         # print(img.shape)
         # print(len(boxes))
         return {'count': len(boxes)}
+
 
 class HelloWorld(Resource):
     def get(self):
