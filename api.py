@@ -34,8 +34,7 @@ def PeopleCounterForm():
 
 class PeopleCounterUrl(Resource):
     def get(self):
-        url = request.args.get('url')
-        url = requests.get(url, stream=True).raw
+        url = requests.get(request.args.get('url'), stream=True).raw
         arr = np.asarray(bytearray(url.read()), dtype="uint8")
         img = cv2.imdecode(arr, cv2.IMREAD_COLOR)
         boxes, weights = hog.detectMultiScale(img, winStride=(8, 8))
